@@ -4,7 +4,7 @@ const app = express();
 const date = require(__dirname + "/date.js")
 const mongoose = require("mongoose")
 
-mongoose.connect('mongodb://127.0.0.1:27017/todolistDB', { useNewUrlParser: true })
+mongoose.connect('mongodb+srv://taufiqahmed:taufiq10@cluster0.iajtwh5.mongodb.net/todolistDB', { useNewUrlParser: true })
 
 app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({ extended: true }))
@@ -36,7 +36,6 @@ const listSchema = {
 
 
 const List = mongoose.mongoose.model("List", listSchema);
-
 
 
 
