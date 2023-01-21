@@ -1,10 +1,13 @@
+require('dotenv').config()
 const express = require("express");
 const bodyParser = require("body-parser");
 const app = express();
 const date = require(__dirname + "/date.js")
 const mongoose = require("mongoose")
 
-mongoose.connect('mongodb+srv://taufiqahmed:taufiq10@cluster0.iajtwh5.mongodb.net/todolistDB', { useNewUrlParser: true })
+const link = process.env.LINK
+
+mongoose.connect(link, { useNewUrlParser: true })
 
 app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({ extended: true }))
